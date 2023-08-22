@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class customizedText extends StatelessWidget {
+class CustomText extends StatelessWidget {
   final String text;
   final Color textcolor;
 
-  customizedText({required this.text, required this.textcolor});
+  CustomText({super.key, required this.text, required this.textcolor});
 
   @override
   Widget build(BuildContext context) {

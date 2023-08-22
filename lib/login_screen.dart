@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:transportation_app/register_screen.dart';
-import 'package:transportation_app/widgets/customized_elevatedbutton.dart';
-import 'package:transportation_app/widgets/customized_text.dart';
-import 'package:transportation_app/widgets/customized_textfieldbutton.dart';
+import 'package:transportation_app/widgets/CustomizedElevatedButton.dart';
+import 'package:transportation_app/widgets/CustomText.dart';
+import 'package:transportation_app/widgets/CustomizedTextFieldButton.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -16,8 +16,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   //TextFieldları kontrol etmek için iki tane controller tanımladım.
 
-  final usernameController = TextEditingController();
-  final passwordController = TextEditingController();
+  final _usernameController = TextEditingController();
+  final _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -34,25 +34,23 @@ class _LoginScreenState extends State<LoginScreen> {
 
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: SvgPicture.asset("images/transportation_miniicon.svg"),
+              child: SvgPicture.asset('images/transportation_miniicon.svg'),
             ),
-            customizedText(text: "Login", textcolor: const Color(0xff191849)),
+            CustomText(text: 'Login', textcolor: const Color(0xff191849)),
 
             //Textfield'larda ilk önce Username kısmını tanımladım.
 
-            CustomizedTextField(
-              myController: usernameController,
-              hintText: "Username",
-              helperText: "Enter your username",
-              isPassword: false,
+            CustomizedTextFieldButton(
+              myController: _usernameController,
+              hintText: 'Username',
+              helperText: 'Enter your username',
             ),
 
 
-            CustomizedTextField(
-              myController: passwordController,
-              hintText: "Password",
-              helperText: "Enter your password",
-              isPassword: true,
+            CustomizedTextFieldButton(
+              myController: _passwordController,
+              hintText: 'Password',
+              helperText: 'Enter your password',
             ),
 
             //Sosyal medya ile giriş yapılabilceğini burada tanımladım.
@@ -60,8 +58,8 @@ class _LoginScreenState extends State<LoginScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                customizedText(
-                    text: "Login With", textcolor: const Color(0xff191849)),
+                CustomText(
+                    text: 'Login With', textcolor: const Color(0xff191849)),
               ],
             ),
             const SizedBox(
@@ -70,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset("images/socialmedia_icon.png"),
+                Image.asset('images/socialmedia_icon.png'),
               ],
             ),
             const SizedBox(
@@ -84,8 +82,8 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  customizedText(
-                    text: "Not registered yet ?",
+                  CustomText(
+                    text: 'Not registered yet ?',
                     textcolor: const Color(0xff191849),
                   ),
                   const SizedBox(
@@ -101,8 +99,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             MaterialPageRoute(
                                 builder: (context) => const RegisterScreen()));
                       },
-                      child: customizedText(
-                        text: "Register Now !",
+                      child: CustomText(
+                        text: 'Register Now !',
                         textcolor: const Color(0xff7773F5),
                       )),
                 ],
@@ -113,8 +111,8 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  customizedText(
-                    text: "Forget Password",
+                  CustomText(
+                    text: 'Forget Password',
                     textcolor: const Color(0xff7773F5),
                   ),
                 ],
@@ -122,8 +120,8 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
 
             //En son kısma ise LOGIN butonunu tanımlayıp diğer sayfaya geçiş yaptım.
-            CustomizedButton(
-              buttonText: "Login",
+            CustomizedElevatedButton(
+              buttonText: 'Login',
               textColor: const Color(0xffEEEEFE),
               buttonColor: const Color(0xff5550F2),
               foregroundColor: Colors.blue.withOpacity(0.01),

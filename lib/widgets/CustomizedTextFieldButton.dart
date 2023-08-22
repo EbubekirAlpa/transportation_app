@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CustomizedTextField extends StatelessWidget {
+class CustomizedTextFieldButton extends StatelessWidget {
 
   final TextEditingController ? myController ;
   final String ? hintText ;
@@ -8,7 +8,7 @@ class CustomizedTextField extends StatelessWidget {
   final Color ? hintColor ;
   final bool ? isPassword ;
 
-  const CustomizedTextField({Key? key, this.myController, this.hintText, this.helperText, this.isPassword, this.hintColor}) : super(key: key);
+  const CustomizedTextFieldButton({Key? key, this.myController, this.hintText, this.helperText, this.isPassword, this.hintColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

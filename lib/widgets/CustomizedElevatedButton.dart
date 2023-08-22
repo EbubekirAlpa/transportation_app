@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:transportation_app/login_screen.dart';
 import 'package:transportation_app/register_screen.dart';
 
-class CustomizedButton extends StatelessWidget {
+class CustomizedElevatedButton extends StatelessWidget {
 
   final String ? buttonText ;
   final Color ? buttonColor ;
@@ -11,7 +11,7 @@ class CustomizedButton extends StatelessWidget {
   final VoidCallback ? onPressed ;
 
 
-  const CustomizedButton({Key? key, this.buttonText, this.buttonColor,this.foregroundColor, this.textColor, this.onPressed}) : super(key: key);
+  const CustomizedElevatedButton({Key? key, this.buttonText, this.buttonColor,this.foregroundColor, this.textColor, this.onPressed}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Padding(
@@ -25,12 +25,12 @@ class CustomizedButton extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               backgroundColor:  buttonColor,
               foregroundColor:  foregroundColor,
-              side: BorderSide(width: 1,color: Color(0xff5550F2)),
+              side: const BorderSide(width: 1,color: Color(0xff5550F2)),
             ),
             onPressed: (){
             },
             child:Text(
-                buttonText!,
+                buttonText??"",
               style: TextStyle(color: textColor,fontSize: 28),
             ),
           ),

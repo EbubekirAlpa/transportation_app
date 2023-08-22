@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:transportation_app/widgets/customized_text.dart';
-import 'widgets/customized_elevatedbutton.dart';
-import 'widgets/customized_textfieldbutton.dart';
+import 'package:transportation_app/widgets/CustomText.dart';
+import 'widgets/CustomizedElevatedButton.dart';
+import 'widgets/CustomizedTextFieldButton.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -15,9 +15,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   //3 adet Textfield tanımladım.
 
-  final usernameController = TextEditingController();
-  final passwordController = TextEditingController();
-  final emailController = TextEditingController();
+  final _usernameController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _emailController = TextEditingController();
 
 
   @override
@@ -35,42 +35,41 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: SvgPicture.asset("images/transportation_miniicon.svg"),
+              child: SvgPicture.asset('images/transportation_miniicon.svg'),
             ),
 
             //Register yazısını burada tanımladım.
 
              Padding(
               padding: const EdgeInsets.all(8.0),
-              child: customizedText(text: "Register", textcolor: const Color(0xff191849),)
+              child: CustomText(text: 'Register', textcolor: const Color(0xff191849),)
             ),
 
             //Username butonunu burada tanımladım.
 
-            CustomizedTextField(
-              myController: usernameController,
-              hintText: "Username",
-              helperText: "Enter your username",
-              isPassword: false,
+            CustomizedTextFieldButton(
+              myController: _usernameController,
+              hintText: 'Username',
+              helperText: 'Enter your username',
               hintColor: const Color(0xffCCCBFB),
             ),
 
             //Password butonunu burada tanımladım.
 
-            CustomizedTextField(
-              myController: passwordController,
-              hintText: "Password",
-              helperText: "Enter your password",
+            CustomizedTextFieldButton(
+              myController: _passwordController,
+              hintText: 'Password',
+              helperText: 'Enter your password',
               isPassword: true,
               hintColor: const Color(0xffCCCBFB),
             ),
 
             //E-mail butonunu burada tanımladım.
 
-            CustomizedTextField(
-              myController: emailController,
-              hintText: "E-Mail",
-              helperText: "Enter your E-Mail",
+            CustomizedTextFieldButton(
+              myController: _emailController,
+              hintText: 'E-Mail',
+              helperText: 'Enter your E-Mail',
               isPassword: true,
               hintColor: const Color(0xffCCCBFB),
             ),
@@ -80,7 +79,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                customizedText(text: "Or Register With", textcolor: const Color(0xff191849),)
+                CustomText(text: 'Or Register With', textcolor: const Color(0xff191849),)
               ],
             ),
             const SizedBox(
@@ -89,7 +88,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset("images/socialmedia_icon.png"),
+                Image.asset('images/socialmedia_icon.png'),
               ],
             ),
             const SizedBox(
@@ -103,7 +102,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  customizedText(text: "All ready have an account  ?", textcolor: const Color(0xff191849),),
+                  CustomText(text: 'All ready have an account  ?', textcolor: const Color(0xff191849),),
                   const SizedBox(
                     width: 5,
                   ),
@@ -116,8 +115,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CustomizedButton(
-                  buttonText: "Register",
+                CustomizedElevatedButton(
+                  buttonText: 'Register',
                   textColor: const Color(0xffEEEEFE),
                   buttonColor: const Color(0xff5550F2),
                   foregroundColor: Colors.blue.withOpacity(0.01),

@@ -55,7 +55,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               hintColor: const Color(0xffCCCBFB),
             ),
 
-            //Email butonunu burada tanımladım.
+            //Password butonunu burada tanımladım.
 
             CustomizedTextField(
               myController: passwordController,
@@ -65,7 +65,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               hintColor: const Color(0xffCCCBFB),
             ),
 
-            //Password butonunu burada tanımladım.
+            //E-mail butonunu burada tanımladım.
 
             CustomizedTextField(
               myController: emailController,

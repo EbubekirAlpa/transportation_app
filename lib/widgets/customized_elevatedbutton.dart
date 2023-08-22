@@ -28,7 +28,6 @@ class CustomizedButton extends StatelessWidget {
               side: BorderSide(width: 1,color: Color(0xff5550F2)),
             ),
             onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>RegisterScreen()));
             },
             child:Text(
                 buttonText!,

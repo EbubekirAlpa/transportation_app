@@ -128,8 +128,6 @@ class _LoginScreenState extends State<LoginScreen> {
               buttonColor: const Color(0xff5550F2),
               foregroundColor: Colors.blue.withOpacity(0.01),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => const LoginScreen()));
               },
             ),
           ],

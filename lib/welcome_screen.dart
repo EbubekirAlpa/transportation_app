@@ -62,7 +62,7 @@ class WelcomeScreen extends StatelessWidget {
                 foregroundColor: Colors.blue.withOpacity(0.01),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const LoginScreen()));
+                      MaterialPageRoute(builder: (context) => const LoginScreen()));
                 },
               ),
               const SizedBox(
@@ -80,7 +80,7 @@ class WelcomeScreen extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (_) => const RegisterScreen()));
+                          builder: (context) => const RegisterScreen()));
                 },
               ),
               const SizedBox(

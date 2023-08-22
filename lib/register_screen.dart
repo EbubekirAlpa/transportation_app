@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:transportation_app/widgets/customized_text.dart';
+import 'widgets/customized_elevatedbutton.dart';
+import 'widgets/customized_textfieldbutton.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -11,9 +15,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   //3 adet Textfield tanımladım.
 
-  var uncontroller = TextEditingController();
-  var pccontroller = TextEditingController();
-  var eccontroller = TextEditingController();
+  final usernameController = TextEditingController();
+  final passwordController = TextEditingController();
+  final emailController = TextEditingController();
 
 
   @override
@@ -31,84 +35,52 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Image.asset("images/img_ba.png"),
+              child: SvgPicture.asset("images/transportation_miniicon.svg"),
             ),
 
             //Register yazısını burada tanımladım.
 
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text("Register",
-                style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xff191849)),
-              ),
+             Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: customizedText(text: "Register", textcolor: const Color(0xff191849),)
             ),
 
             //Username butonunu burada tanımladım.
 
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                controller: uncontroller,
-                decoration: InputDecoration(
-                  fillColor: const Color(0xffEEEEFE),
-                  filled: true,
-                  helperText: "Username",
-                  hintText: "Username",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
+            CustomizedTextField(
+              myController: usernameController,
+              hintText: "Username",
+              helperText: "Enter your username",
+              isPassword: false,
+              hintColor: const Color(0xffCCCBFB),
             ),
 
             //Email butonunu burada tanımladım.
 
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                controller: eccontroller,
-                decoration: InputDecoration(
-                  fillColor: const Color(0xffEEEEFE),
-                  filled: true,
-                  helperText: "E-Mail",
-                  hintText: "example@example.com",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
+            CustomizedTextField(
+              myController: passwordController,
+              hintText: "Password",
+              helperText: "Enter your password",
+              isPassword: true,
+              hintColor: const Color(0xffCCCBFB),
             ),
 
             //Password butonunu burada tanımladım.
 
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                controller: pccontroller,
-                decoration: InputDecoration(
-                  fillColor: const Color(0xffEEEEFE),
-                  filled: true,
-                  helperText: "Password",
-                  hintText: "Password",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
+            CustomizedTextField(
+              myController: emailController,
+              hintText: "E-Mail",
+              helperText: "Enter your E-Mail",
+              isPassword: true,
+              hintColor: const Color(0xffCCCBFB),
             ),
 
             //Or register with butonunu burada tanımladım,altında sosyal medya logoları da bulunuyor.
 
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  "Or Register With",
-                  style: TextStyle(fontSize: 20),
-                ),
+                customizedText(text: "Or Register With", textcolor: const Color(0xff191849),)
               ],
             ),
             const SizedBox(
@@ -117,7 +89,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset("images/ic_sc.png"),
+                Image.asset("images/socialmedia_icon.png"),
               ],
             ),
             const SizedBox(
@@ -126,18 +98,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
             //Sosyal medya altındaki yazıyı burda tanımladım.
 
-            const Padding(
-              padding: EdgeInsets.all(8.0),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    "All ready have an account  ?",
-                    style: TextStyle(fontSize: 15,
-                        color: Color(0xff191849),
-                        fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
+                  customizedText(text: "All ready have an account  ?", textcolor: const Color(0xff191849),),
+                  const SizedBox(
                     width: 5,
                   ),
                 ],
@@ -149,25 +116,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SizedBox(
-                    height: 50,
-                    width: 250,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xff5550F2),
-                        foregroundColor: const Color(0xffFFFFFF),
-                      ),
-                      child: const Text(
-                        "Register",
-                        style: TextStyle(fontSize: 30,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      onPressed: (){
-                      },
-                    ),
-                  ),
+                CustomizedButton(
+                  buttonText: "Register",
+                  textColor: const Color(0xffEEEEFE),
+                  buttonColor: const Color(0xff5550F2),
+                  foregroundColor: Colors.blue.withOpacity(0.01),
+                  onPressed: () {
+
+                  },
                 ),
               ],
             ),

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:transportation_app/register_screen.dart';
+import 'package:transportation_app/widgets/customized_elevatedbutton.dart';
+import 'package:transportation_app/widgets/customized_text.dart';
+import 'package:transportation_app/widgets/customized_textfieldbutton.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -12,8 +16,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   //TextFieldları kontrol etmek için iki tane controller tanımladım.
 
-  var uncontroller = TextEditingController();
-  var pccontroller = TextEditingController();
+  final usernameController = TextEditingController();
+  final passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,60 +34,34 @@ class _LoginScreenState extends State<LoginScreen> {
 
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Image.asset("images/img_ba.png"),
+              child: SvgPicture.asset("images/transportation_miniicon.svg"),
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text("Login",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Color(0xff191849)),),
-            ),
+            customizedText(text: "Login", textcolor: const Color(0xff191849)),
 
             //Textfield'larda ilk önce Username kısmını tanımladım.
 
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                controller: uncontroller,
-                decoration: InputDecoration(
-                  fillColor: const Color(0xffEEEEFE),
-                  filled: true,
-                  helperText: "Username",
-                  hintText: "Username",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
+            CustomizedTextField(
+              myController: usernameController,
+              hintText: "Username",
+              helperText: "Enter your username",
+              isPassword: false,
             ),
 
-            //Textfield'da Password kısmını tanımladım.
 
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                controller: pccontroller,
-                decoration: InputDecoration(
-                  fillColor: const Color(0xffEEEEFE),
-                  filled: true,
-                  helperText: "Password",
-                  hintText: "Password",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-                obscureText: true,
-                maxLength: 6,
-              ),
+            CustomizedTextField(
+              myController: passwordController,
+              hintText: "Password",
+              helperText: "Enter your password",
+              isPassword: true,
             ),
 
-           //Sosyal medya ile giriş yapılabilceğini burada tanımladım.
+            //Sosyal medya ile giriş yapılabilceğini burada tanımladım.
 
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  "Login With",
-                  style: TextStyle(fontSize: 20),
-                ),
+                customizedText(
+                    text: "Login With", textcolor: const Color(0xff191849)),
               ],
             ),
             const SizedBox(
@@ -92,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset("images/ic_sc.png"),
+                Image.asset("images/socialmedia_icon.png"),
               ],
             ),
             const SizedBox(
@@ -101,16 +79,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
             //Sosyal medyadan sonra gelen textleri burda tanımladım.
 
-             Padding(
+            Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    "Not registered yet ?",
-                    style: TextStyle(fontSize: 15,
-                        color: Color(0xff191849),
-                        fontWeight: FontWeight.bold),
+                  customizedText(
+                    text: "Not registered yet ?",
+                    textcolor: const Color(0xff191849),
                   ),
                   const SizedBox(
                     width: 5,
@@ -119,60 +95,42 @@ class _LoginScreenState extends State<LoginScreen> {
                   //Buradaki Register kısmından direkt Register sayfasına geçiş ekledim.
 
                   GestureDetector(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const RegisterScreen()));
-                    },
-                    child: const Text(
-                      "Register Now !",
-                      style: TextStyle(color: Color(0xff7773F5),
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const RegisterScreen()));
+                      },
+                      child: customizedText(
+                        text: "Register Now !",
+                        textcolor: const Color(0xff7773F5),
+                      )),
                 ],
               ),
             ),
-            const Padding(
-              padding:EdgeInsets.all(8.0),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    "Forget Password ?",
-                    style: TextStyle(color: Color(0xff7773F5),
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold),
+                  customizedText(
+                    text: "Forget Password",
+                    textcolor: const Color(0xff7773F5),
                   ),
                 ],
               ),
             ),
 
             //En son kısma ise LOGIN butonunu tanımlayıp diğer sayfaya geçiş yaptım.
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SizedBox(
-                    height: 50,
-                    width: 250,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xff5550F2),
-                        foregroundColor: const Color(0xffFFFFFF),
-                      ),
-                      child: const Text(
-                        "Login",
-                        style: TextStyle(fontSize: 30,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      onPressed: (){
-                      },
-                    ),
-                  ),
-                ),
-              ],
+            CustomizedButton(
+              buttonText: "Login",
+              textColor: const Color(0xffEEEEFE),
+              buttonColor: const Color(0xff5550F2),
+              foregroundColor: Colors.blue.withOpacity(0.01),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => const LoginScreen()));
+              },
             ),
           ],
         ),

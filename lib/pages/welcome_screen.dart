@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:transportation_app/login_screen.dart';
-import 'package:transportation_app/register_screen.dart';
+import 'package:transportation_app/pages/login_screen.dart';
+import 'package:transportation_app/pages/register_screen.dart';
 import 'package:transportation_app/widgets/CustomizedElevatedButton.dart';
 import 'package:transportation_app/widgets/CustomText.dart';
 
-class WelcomeScreen extends StatelessWidget {
+final class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
 
   //Hocam burada Anasayfadaki resmi tanımladım,arkaplanı ekrana sığdırdım.
@@ -41,12 +41,13 @@ class WelcomeScreen extends StatelessWidget {
 
               //Burada logo altına gelen yazıyı ekledim.
 
-              Expanded(
+              const Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: CustomText(
-                      text: 'Let''s transfer your package in a comfortable and easy way !',
-                      textcolor: const Color(0xffEEEEFE)),
+                      text: 'Let'
+                          's transfer your package in a comfortable and easy way !',
+                      textColor: Color(0xffEEEEFE)),
                 ),
               ),
               const SizedBox(
@@ -62,8 +63,10 @@ class WelcomeScreen extends StatelessWidget {
                 buttonColor: const Color(0xff5550F2),
                 foregroundColor: Colors.blue.withOpacity(0.01),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const LoginScreen()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginScreen()));
                 },
               ),
               const SizedBox(

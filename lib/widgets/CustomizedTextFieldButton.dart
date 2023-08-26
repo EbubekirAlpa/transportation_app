@@ -6,16 +6,16 @@ class CustomizedTextFieldButton extends StatelessWidget {
   final String ? hintText ;
   final String ? helperText ;
   final Color ? hintColor ;
-  final bool ? isPassword ;
+  final bool  isPassword ;
 
-  const CustomizedTextFieldButton({Key? key, this.myController, this.hintText, this.helperText, this.isPassword, this.hintColor}) : super(key: key);
+  const CustomizedTextFieldButton({Key? key, this.myController, this.hintText, this.helperText, this.isPassword=true, this.hintColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: TextField(
-        obscureText: isPassword??true,
+        obscureText: isPassword,
         controller: myController,
         decoration: InputDecoration(
           fillColor: const Color(0xffEEEEFE),

@@ -63,10 +63,9 @@ final class WelcomeScreen extends StatelessWidget {
                 buttonColor: const Color(0xff5550F2),
                 foregroundColor: Colors.blue.withOpacity(0.01),
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const LoginScreen()));
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const LoginScreen(),
+                  ));
                 },
               ),
               const SizedBox(
@@ -81,10 +80,9 @@ final class WelcomeScreen extends StatelessWidget {
                 buttonColor: const Color(0xff5550F2),
                 foregroundColor: Colors.blue.withOpacity(0.01),
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const RegisterScreen()));
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const RegisterScreen(),
+                  ));
                 },
               ),
               const SizedBox(

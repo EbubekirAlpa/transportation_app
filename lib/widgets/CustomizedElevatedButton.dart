@@ -1,6 +1,6 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
-import 'package:transportation_app/pages/login_screen.dart';
-import 'package:transportation_app/pages/register_screen.dart';
 
 final class CustomizedElevatedButton extends StatelessWidget {
   final String? buttonText;
@@ -24,19 +24,16 @@ final class CustomizedElevatedButton extends StatelessWidget {
         child: SizedBox(
           height: 50,
           width: 325,
-          child: InkWell(
-            onTap: onPressed,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: buttonColor,
-                foregroundColor: foregroundColor,
-                side: const BorderSide(width: 1, color: Color(0xff5550F2)),
-              ),
-              onPressed: () {},
-              child: Text(
-                buttonText ?? "",
-                style: TextStyle(color: textColor, fontSize: 28),
-              ),
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: buttonColor,
+              foregroundColor: foregroundColor,
+              side: const BorderSide(width: 1, color: Color(0xff5550F2)),
+            ),
+            onPressed: () {},
+            child: Text(
+              buttonText ?? "",
+              style: TextStyle(color: textColor, fontSize: 28),
             ),
           ),
         ),

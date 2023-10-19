@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:transportation_app/pages/register_screen.dart';
-import 'package:transportation_app/widgets/CustomizedElevatedButton.dart';
-import 'package:transportation_app/widgets/CustomText.dart';
-import 'package:transportation_app/widgets/CustomizedTextFieldButton.dart';
+import 'package:transportation_app/widgets/custom_color.dart';
+import 'package:transportation_app/widgets/custom_elevated_button.dart';
+import 'package:transportation_app/widgets/custom_text.dart';
+import 'package:transportation_app/widgets/custom_tfield_button.dart';
 
 final class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -35,7 +36,7 @@ final class _LoginScreenState extends State<LoginScreen> {
               padding: const EdgeInsets.all(8.0),
               child: SvgPicture.asset('images/transportation_miniicon.svg'),
             ),
-            const CustomText(text: 'Login', textColor: Color(0xff191849)),
+            const CustomText(text: 'Login', textColor: CustomColors.navyblue),
 
             //Textfield'larda ilk önce Username kısmını tanımladım.
 
@@ -56,7 +57,8 @@ final class _LoginScreenState extends State<LoginScreen> {
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CustomText(text: 'Login With', textColor: Color(0xff191849)),
+                CustomText(
+                    text: 'Login With', textColor: CustomColors.navyblue),
               ],
             ),
             const SizedBox(height: 20),
@@ -77,7 +79,7 @@ final class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   const CustomText(
                     text: 'Not registered yet ?',
-                    textColor: Color(0xff191849),
+                    textColor: CustomColors.navyblue,
                   ),
                   const SizedBox(
                     width: 5,
@@ -94,7 +96,7 @@ final class _LoginScreenState extends State<LoginScreen> {
                       },
                       child: const CustomText(
                         text: 'Register Now !',
-                        textColor: Color(0xff7773F5),
+                        textColor: CustomColors.white,
                       )),
                 ],
               ),
@@ -106,7 +108,7 @@ final class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   CustomText(
                     text: 'Forget Password',
-                    textColor: Color(0xff7773F5),
+                    textColor: CustomColors.lightpurple,
                   ),
                 ],
               ),
@@ -115,8 +117,8 @@ final class _LoginScreenState extends State<LoginScreen> {
             //En son kısma ise LOGIN butonunu tanımlayıp diğer sayfaya geçiş yaptım.
             CustomizedElevatedButton(
               buttonText: 'Login',
-              textColor: const Color(0xffEEEEFE),
-              buttonColor: const Color(0xff5550F2),
+              textColor: CustomColors.white,
+              buttonColor: CustomColors.lightblue,
               foregroundColor: Colors.blue.withOpacity(0.01),
               onPressed: () {},
             ),

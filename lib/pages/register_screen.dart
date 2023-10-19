@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:transportation_app/widgets/CustomText.dart';
-import '../widgets/CustomizedElevatedButton.dart';
-import '../widgets/CustomizedTextFieldButton.dart';
+import 'package:transportation_app/widgets/custom_color.dart';
+import 'package:transportation_app/widgets/custom_text.dart';
+import '../widgets/custom_elevated_button.dart';
+import '../widgets/custom_tfield_button.dart';
 
 final class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -42,7 +43,7 @@ final class _RegisterScreenState extends State<RegisterScreen> {
                 padding: EdgeInsets.all(8.0),
                 child: CustomText(
                   text: 'Register',
-                  textColor: Color(0xff191849),
+                  textColor: CustomColors.navyblue,
                 )),
 
             //Username butonunu burada tanımladım.
@@ -51,7 +52,7 @@ final class _RegisterScreenState extends State<RegisterScreen> {
               myController: _usernameController,
               hintText: 'Username',
               helperText: 'Enter your username',
-              hintColor: const Color(0xffCCCBFB),
+              hintColor: CustomColors.white,
             ),
 
             //Password butonunu burada tanımladım.
@@ -61,7 +62,7 @@ final class _RegisterScreenState extends State<RegisterScreen> {
               hintText: 'Password',
               helperText: 'Enter your password',
               isPassword: true,
-              hintColor: const Color(0xffCCCBFB),
+              hintColor: CustomColors.white,
             ),
 
             //E-mail butonunu burada tanımladım.
@@ -71,7 +72,7 @@ final class _RegisterScreenState extends State<RegisterScreen> {
               hintText: 'E-Mail',
               helperText: 'Enter your E-Mail',
               isPassword: true,
-              hintColor: const Color(0xffCCCBFB),
+              hintColor: CustomColors.white,
             ),
 
             //Or register with butonunu burada tanımladım,altında sosyal medya logoları da bulunuyor.
@@ -81,7 +82,7 @@ final class _RegisterScreenState extends State<RegisterScreen> {
               children: [
                 CustomText(
                   text: 'Or Register With',
-                  textColor: Color(0xff191849),
+                  textColor: CustomColors.navyblue,
                 )
               ],
             ),
@@ -98,7 +99,7 @@ final class _RegisterScreenState extends State<RegisterScreen> {
                 children: [
                   CustomText(
                     text: 'All ready have an account  ?',
-                    textColor: Color(0xff191849),
+                    textColor: CustomColors.navyblue,
                   ),
                   SizedBox(
                     width: 5,
@@ -114,8 +115,8 @@ final class _RegisterScreenState extends State<RegisterScreen> {
               children: [
                 CustomizedElevatedButton(
                   buttonText: 'Register',
-                  textColor: const Color(0xffEEEEFE),
-                  buttonColor: const Color(0xff5550F2),
+                  textColor: CustomColors.white,
+                  buttonColor: CustomColors.lightblue,
                   foregroundColor: Colors.blue.withOpacity(0.01),
                   onPressed: () {},
                 ),

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:transportation_app/pages/login_screen.dart';
 import 'package:transportation_app/pages/register_screen.dart';
-import 'package:transportation_app/widgets/CustomizedElevatedButton.dart';
-import 'package:transportation_app/widgets/CustomText.dart';
+import 'package:transportation_app/widgets/custom_color.dart';
+import 'package:transportation_app/widgets/custom_elevated_button.dart';
+import 'package:transportation_app/widgets/custom_text.dart';
 
 final class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -47,7 +48,7 @@ final class WelcomeScreen extends StatelessWidget {
                   child: CustomText(
                       text: 'Let'
                           's transfer your package in a comfortable and easy way !',
-                      textColor: Color(0xffEEEEFE)),
+                      textColor: CustomColors.white),
                 ),
               ),
               const SizedBox(
@@ -59,8 +60,8 @@ final class WelcomeScreen extends StatelessWidget {
 
               CustomizedElevatedButton(
                 buttonText: 'Login',
-                textColor: const Color(0xffEEEEFE),
-                buttonColor: const Color(0xff5550F2),
+                textColor: CustomColors.white,
+                buttonColor: CustomColors.lightpurple,
                 foregroundColor: Colors.blue.withOpacity(0.01),
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
@@ -76,8 +77,8 @@ final class WelcomeScreen extends StatelessWidget {
 
               CustomizedElevatedButton(
                 buttonText: 'Register',
-                textColor: const Color(0xffEEEEFE),
-                buttonColor: const Color(0xff5550F2),
+                textColor: CustomColors.white,
+                buttonColor: CustomColors.lightblue,
                 foregroundColor: Colors.blue.withOpacity(0.01),
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(

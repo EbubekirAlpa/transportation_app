@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:transportation_app/pages/welcome_screen.dart';
+import 'package:transportation_app/pages/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+final class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
@@ -13,10 +13,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: const WelcomeScreen(),
+      home: const LoginScreen(),
     );
   }
 }

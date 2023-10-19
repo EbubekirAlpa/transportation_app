@@ -22,8 +22,6 @@ final class CustomizedElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) => Padding(
         padding: const EdgeInsets.all(10.0),
         child: SizedBox(
-          height: 50,
-          width: 325,
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
               backgroundColor: buttonColor,

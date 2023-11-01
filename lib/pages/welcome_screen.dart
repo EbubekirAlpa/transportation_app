@@ -19,7 +19,7 @@ final class WelcomeScreen extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/welcome_screen_container.png'),
+            image: AssetImage('assets/images/welcome_screen_container.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -30,12 +30,15 @@ final class WelcomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
+              const SizedBox(
+                height: 20,
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SvgPicture.asset('images/transportation_icon.svg'),
+                    SvgPicture.asset('assets/icons/transportation_icon.svg'),
                   ],
                 ),
               ),
@@ -52,22 +55,27 @@ final class WelcomeScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 250,
+                height: 200,
               ),
 
               //Component yapısı ile butonları oluşturdum.
               //Birinci kısım Login
 
-              CustomizedElevatedButton(
-                buttonText: 'Login',
-                textColor: CustomColors.white,
-                buttonColor: CustomColors.lightpurple,
-                foregroundColor: Colors.blue.withOpacity(0.01),
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const LoginScreen(),
-                  ));
-                },
+              SizedBox(
+                width: 280,
+                child: CustomizedElevatedButton(
+                  buttonText: 'Login',
+                  textColor: CustomColors.white,
+                  buttonColor: CustomColors.lightpurple,
+                  foregroundColor: Colors.blue.withOpacity(0.01),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginScreen(),
+                        ));
+                  },
+                ),
               ),
               const SizedBox(
                 height: 30,
@@ -75,16 +83,21 @@ final class WelcomeScreen extends StatelessWidget {
 
               //İkinci kısım Register
 
-              CustomizedElevatedButton(
-                buttonText: 'Register',
-                textColor: CustomColors.white,
-                buttonColor: CustomColors.lightblue,
-                foregroundColor: Colors.blue.withOpacity(0.01),
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const RegisterScreen(),
-                  ));
-                },
+              SizedBox(
+                width: 280,
+                child: CustomizedElevatedButton(
+                  buttonText: 'Register',
+                  textColor: CustomColors.white,
+                  buttonColor: CustomColors.lightblue.withOpacity(0.1),
+                  foregroundColor: Colors.blue.withOpacity(0.01),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const RegisterScreen(),
+                        ));
+                  },
+                ),
               ),
               const SizedBox(
                 height: 30,

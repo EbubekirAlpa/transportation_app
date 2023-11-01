@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:transportation_app/pages/homepagescreen.dart';
-import 'package:transportation_app/pages/welcome_screen.dart';
+import 'package:transportation_app/pages/home_pagescreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +13,8 @@ final class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.white, background: Colors.white),
         useMaterial3: true,
       ),
       home: const HomePageScreen(),

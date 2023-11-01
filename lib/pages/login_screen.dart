@@ -26,15 +26,12 @@ final class _LoginScreenState extends State<LoginScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(
-              height: 100,
-            ),
-
             //Önce logoyu tanımladım daha sonra Login yazısını tanımladım.
 
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: SvgPicture.asset('images/transportation_miniicon.svg'),
+              child:
+                  SvgPicture.asset('assets/icons/transportation_miniicon.svg'),
             ),
             const CustomText(text: 'Login', textColor: CustomColors.navyblue),
 
@@ -65,7 +62,7 @@ final class _LoginScreenState extends State<LoginScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('images/socialmedia_icon.png'),
+                Image.asset('assets/images/socialmedia_icon.png'),
               ],
             ),
             const SizedBox(height: 20),

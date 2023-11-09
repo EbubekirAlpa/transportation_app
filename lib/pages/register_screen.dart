@@ -22,29 +22,23 @@ final class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 100,
+              height: 30,
             ),
-
             //Logoyu burda tanımladım.
 
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SvgPicture.asset('images/transportation_miniicon.svg'),
-            ),
-
+            SvgPicture.asset('assets/icons/transportation_miniicon.svg'),
             //Register yazısını burada tanımladım.
-
-            const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: CustomText(
-                  text: 'Register',
-                  textColor: CustomColors.navyblue,
-                )),
+            const CustomText(
+              text: 'Register',
+              textColor: CustomColors.navyBlue,
+              fontSize: 32,
+            ),
 
             //Username butonunu burada tanımladım.
 
@@ -82,30 +76,30 @@ final class _RegisterScreenState extends State<RegisterScreen> {
               children: [
                 CustomText(
                   text: 'Or Register With',
-                  textColor: CustomColors.navyblue,
+                  fontSize: 16,
+                  textColor: CustomColors.navyBlue,
                 )
               ],
             ),
-            const SizedBox(height: 20),
-            Center(child: Image.asset('images/socialmedia_icon.png')),
-            const SizedBox(height: 20),
-
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SvgPicture.asset('assets/icons/logo_google_icon.svg'),
+                SvgPicture.asset('assets/icons/logo_apple_icon.svg'),
+                SvgPicture.asset('assets/icons/logo_facebook_icon.svg'),
+              ],
+            ),
             //Sosyal medya altındaki yazıyı burda tanımladım.
 
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CustomText(
-                    text: 'All ready have an account  ?',
-                    textColor: CustomColors.navyblue,
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                ],
-              ),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CustomText(
+                  text: 'All ready have an account  ?',
+                  fontSize: 16,
+                  textColor: CustomColors.lightPurple,
+                ),
+              ],
             ),
 
             //Register Butonunu burada tanımladım.
@@ -116,7 +110,7 @@ final class _RegisterScreenState extends State<RegisterScreen> {
                 CustomizedElevatedButton(
                   buttonText: 'Register',
                   textColor: CustomColors.white,
-                  buttonColor: CustomColors.lightblue,
+                  buttonColor: CustomColors.lightBlue,
                   foregroundColor: Colors.blue.withOpacity(0.01),
                   onPressed: () {},
                 ),

@@ -20,16 +20,17 @@ final class CustomizedElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) => Padding(
         padding: const EdgeInsets.all(10.0),
         child: SizedBox(
+          width: MediaQuery.of(context).size.width * 0.8,
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
               backgroundColor: buttonColor,
               foregroundColor: foregroundColor,
               side: const BorderSide(width: 1, color: Color(0xff5550F2)),
             ),
-            onPressed: () {},
+            onPressed: onPressed,
             child: Text(
               buttonText ?? "",
-              style: TextStyle(color: textColor, fontSize: 28),
+              style: TextStyle(color: textColor, fontSize: 22),
             ),
           ),
         ),

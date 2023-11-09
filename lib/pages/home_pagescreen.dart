@@ -41,7 +41,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
       drawer: const CustomDrawer(),
       body: _buildBody(),
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: CustomColors.lightblue,
+        selectedItemColor: CustomColors.lightBlue,
         unselectedItemColor: CustomColors.grey,
         showUnselectedLabels: true,
         currentIndex: choosedpage,

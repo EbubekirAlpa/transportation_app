@@ -51,6 +51,7 @@ final class WelcomeScreen extends StatelessWidget {
                   child: CustomText(
                       text: 'Let'
                           's transfer your package in a comfortable and easy way !',
+                      fontSize: 18,
                       textColor: CustomColors.white),
                 ),
               ),
@@ -66,7 +67,7 @@ final class WelcomeScreen extends StatelessWidget {
                 child: CustomizedElevatedButton(
                   buttonText: 'Login',
                   textColor: CustomColors.white,
-                  buttonColor: CustomColors.lightpurple,
+                  buttonColor: CustomColors.lightPurple,
                   foregroundColor: Colors.blue.withOpacity(0.01),
                   onPressed: () {
                     Navigator.push(
@@ -88,14 +89,14 @@ final class WelcomeScreen extends StatelessWidget {
                 child: CustomizedElevatedButton(
                   buttonText: 'Register',
                   textColor: CustomColors.white,
-                  buttonColor: CustomColors.lightblue.withOpacity(0.1),
+                  buttonColor: CustomColors.lightBlue.withOpacity(0.1),
                   foregroundColor: Colors.blue.withOpacity(0.01),
                   onPressed: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const RegisterScreen(),
-                        ));
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const RegisterScreen()),
+                    );
                   },
                 ),
               ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:transportation_app/pages/register_screen.dart';
+import 'package:transportation_app/pages/home_pagescreen.dart';
 import 'package:transportation_app/widgets/custom_color.dart';
 import 'package:transportation_app/widgets/custom_elevated_button.dart';
 import 'package:transportation_app/widgets/custom_text.dart';
@@ -14,7 +14,7 @@ final class LoginScreen extends StatefulWidget {
 }
 
 final class _LoginScreenState extends State<LoginScreen> {
-  //TextFieldları kontrol etmek için iki tane controller tanımladım.
+  //2 adet Textfield tanımladım.
 
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
@@ -22,102 +22,125 @@ final class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            //Önce logoyu tanımladım daha sonra Login yazısını tanımladım.
-
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child:
-                  SvgPicture.asset('assets/icons/transportation_miniicon.svg'),
+            const SizedBox(
+              height: 30,
             ),
-            const CustomText(text: 'Login', textColor: CustomColors.navyblue),
+            //Logoyu burda tanımladım.
 
-            //Textfield'larda ilk önce Username kısmını tanımladım.
+            SvgPicture.asset('assets/icons/transportation_miniicon.svg'),
+            //Register yazısını burada tanımladım.
+            const CustomText(
+              text: 'Login',
+              textColor: CustomColors.black,
+              fontSize: 32,
+            ),
+
+            //Username butonunu burada tanımladım.
 
             CustomizedTextFieldButton(
               myController: _usernameController,
               hintText: 'Username',
               helperText: 'Enter your username',
+              hintColor: CustomColors.white,
             ),
+
+            //Password butonunu burada tanımladım.
 
             CustomizedTextFieldButton(
               myController: _passwordController,
               hintText: 'Password',
               helperText: 'Enter your password',
+              isPassword: true,
+              hintColor: CustomColors.white,
             ),
 
-            //Sosyal medya ile giriş yapılabilceğini burada tanımladım.
+            //Login With Text yazısını burada tanımladım,altında sosyal medya logoları da bulunuyor.
 
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CustomText(
-                    text: 'Login With', textColor: CustomColors.navyblue),
+                  text: 'Login With',
+                  fontSize: 16,
+                  textColor: CustomColors.navyBlue,
+                ),
               ],
             ),
-            const SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset('assets/images/socialmedia_icon.png'),
-              ],
-            ),
-            const SizedBox(height: 20),
-
-            //Sosyal medyadan sonra gelen textleri burda tanımladım.
-
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  const CustomText(
-                    text: 'Not registered yet ?',
-                    textColor: CustomColors.navyblue,
-                  ),
-                  const SizedBox(
-                    width: 5,
-                  ),
-
-                  //Buradaki Register kısmından direkt Register sayfasına geçiş ekledim.
-
-                  GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const RegisterScreen()));
-                      },
-                      child: const CustomText(
-                        text: 'Register Now !',
-                        textColor: CustomColors.white,
-                      )),
+                  SvgPicture.asset('assets/icons/logo_google_icon.svg'),
+                  SvgPicture.asset('assets/icons/logo_apple_icon.svg'),
+                  SvgPicture.asset('assets/icons/logo_facebook_icon.svg'),
                 ],
               ),
             ),
+
+            const SizedBox(
+              height: 20,
+            ),
+            //Burada İki adet customText tanımladım.
+
             const Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.only(top: 16.0),
+              child: Row(
+                children: [
+                  CustomText(
+                    text: 'Not Registered Yet? ',
+                    textColor: CustomColors.black,
+                    fontSize: 14,
+                  ),
+                  CustomText(
+                      text: 'Register Now !',
+                      textColor: CustomColors.lightBlue,
+                      fontSize: 14)
+                ],
+              ),
+            ),
+
+            const Padding(
+              padding: EdgeInsets.only(top: 8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   CustomText(
-                    text: 'Forget Password',
-                    textColor: CustomColors.lightpurple,
-                  ),
+                      text: 'Forget Password ?',
+                      textColor: CustomColors.lightBlue,
+                      fontSize: 16)
                 ],
               ),
             ),
 
-            //En son kısma ise LOGIN butonunu tanımlayıp diğer sayfaya geçiş yaptım.
-            CustomizedElevatedButton(
-              buttonText: 'Login',
-              textColor: CustomColors.white,
-              buttonColor: CustomColors.lightblue,
-              foregroundColor: Colors.blue.withOpacity(0.01),
-              onPressed: () {},
+            const SizedBox(
+              height: 50,
+            ),
+
+            //Login Butonunu burada tanımladım.
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CustomizedElevatedButton(
+                  buttonText: 'Login',
+                  textColor: CustomColors.white,
+                  buttonColor: CustomColors.lightBlue,
+                  foregroundColor: Colors.blue.withOpacity(0.01),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomePageScreen(),
+                        ));
+                  },
+                ),
+              ],
             ),
           ],
         ),
